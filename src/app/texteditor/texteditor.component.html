@@ -1,17 +1,17 @@
-<p>works</p>
-<form role="form" #myForm="ngForm" accept-charset="UTF-8" (ngSubmit)="onSubmit()" novalidate style="margin: 30px;">    
 
+<form role="form" #myForm="ngForm" accept-charset="UTF-8" (ngSubmit)="onSubmit()" novalidate style="margin: 30px;">    
+    
         <div class="form-group">    
     
             <input autofocus autocomplete="none" type="text" name="UserName" placeholder="Enter Title"    
     
-                [(ngModel)]="contentdata.Title" class="form-control" required     
+                [(ngModel)]="contentdata.Title" class="form-control" required #PageContentTitle="ngModel"    
     
                 id="PageContentTitle">    
     
         </div>    
     
-        <ckeditor [(ngModel)]="contentdata.Content"  name="Content" required    
+        <ckeditor [(ngModel)]="contentdata.Content" #PageContent="ngModel" name="PageContent" required    
     
             [config]="ckeConfig" debounce="500">    
     
@@ -31,4 +31,4 @@
     
         </div>    
     
-    </form> 
+    </form>  
